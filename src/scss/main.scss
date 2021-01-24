@@ -7,6 +7,15 @@ $highlight-txt-color: #e5745d;
 $primary-font: "Syne", Helvetica, Arial, sans-serif;
 $secondary-font: "Syne Extra", Helvetica, Arial, sans-serif;
 
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 body {
   font-family: $primary-font;
   font-size: 32px;
@@ -19,6 +28,8 @@ body {
   margin: 240px auto;
 
   transition: background-color 800ms ease;
+
+  overflow-x: hidden;
 }
 
 h2 {
@@ -78,11 +89,11 @@ section {
 .stamps {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 50%;
 
   img {
     position: absolute;
-    transform: translate(-50%, -50%);
+    animation: spin 30s linear infinite;
   }
 }
